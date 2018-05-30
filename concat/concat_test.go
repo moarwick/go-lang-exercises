@@ -11,13 +11,14 @@ var testData = []struct {
 }{
 	{[]string{"Hello", "World"}, "HelloWorld"}, // why do we need to type args again??
 	{[]string{"Shine", "On", "You", "Crazy", "Diamond"}, "ShineOnYouCrazyDiamond"},
+	{[]string{"Amazing", "Waffles"}, "Crap Pankaces"}, // failing test
 }
 
 func TestConcat(t *testing.T) {
-	for _, testCase := range testData {
+	for i, testCase := range testData {
 		actual := concat(testCase.args...)
 		if actual != testCase.expected {
-			error := fmt.Sprintf("Expected: %s, Got: %s", testCase.expected, actual)
+			error := fmt.Sprintf("%d) Expected: %s, Got: %s", i, testCase.expected, actual)
 			t.Error(error)
 		}
 	}
