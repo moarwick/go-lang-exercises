@@ -1,2 +1,2 @@
 # go-lang-exercises
-Tradesy's "Learn Go" practice code
+Golang practice exercises
